@@ -1,0 +1,97 @@
+{
+    'name': 'CRM Tuyển Sinh',
+    'version': '1.0',
+    'summary': 'Quản lý tuyển sinh dựa trên CRM',
+    'category': 'Sales/CRM',
+    'author': 'Thiều Quốc Huy',
+    'depends': [
+        'base_setup',
+        'crm_ts_sales_team',
+        'mail',
+        'calendar',
+        'resource',
+        'utm',
+        'web_tour',
+        'contacts',
+        'digest',
+        'phone_validation',
+        'sale',
+        
+    ],
+    'data': [
+        'security/crm_ts_security.xml',
+        'security/ir.model.access.csv',
+
+        'data/crm_ts_lead_merge_template.xml',
+        'data/crm_ts_lead_prediction_data.xml',
+        'data/crm_ts_lost_reason_data.xml',
+        'data/crm_ts_stage_data.xml',
+        'data/crm_ts_team_data.xml',
+        'data/digest_data.xml',
+        'data/ir_action_data.xml',
+        'data/ir_cron_data.xml',
+        'data/mail_message_subtype_data.xml',
+        'data/crm_ts_recurring_plan_data.xml',
+        'data/crm_ts_tour.xml',
+
+        'wizard/crm_ts_lead_lost_views.xml',
+        'wizard/crm_ts_lead_to_opportunity_views.xml',
+        'wizard/crm_ts_lead_to_opportunity_mass_views.xml',
+        'wizard/crm_ts_merge_opportunities_views.xml',
+        'wizard/crm_ts_lead_pls_update_views.xml',
+
+
+        'views/calendar_views.xml',
+        'views/crm_ts_recurring_plan_views.xml',
+        'views/crm_ts_lost_reason_views.xml',
+        'views/crm_ts_stage_views.xml',
+        'views/crm_ts_lead_views.xml',
+        'views/crm_ts_team_member_views.xml',
+        'views/digest_views.xml',
+        'views/mail_activity_plan_views.xml',
+        'views/mail_activity_views.xml',
+        'views/res_config_settings_views.xml',
+        'views/res_partner_views.xml',
+        'views/utm_campaign_views.xml',
+        'report/crm_ts_activity_report_views.xml',
+        'report/crm_ts_opportunity_report_views.xml',
+        'views/crm_ts_team_views.xml',
+        'views/crm_ts_student_wizard_views.xml',
+        'views/crm_ts_menu_views.xml',
+        'views/crm_ts_helper_templates.xml',
+    ],
+    'demo': [
+        'data/crm_ts_team_demo.xml',
+        'data/mail_template_demo.xml',
+        'data/crm_ts_team_member_demo.xml',
+        'data/mail_activity_type_demo.xml',
+        'data/crm_ts_lead_demo.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'assets': {
+        'web.assets_backend': [
+            'crm_ts/static/src/**',
+            ('remove', 'crm_ts/static/src/views/forecast_graph/**'),
+            ('remove', 'crm_ts/static/src/views/forecast_pivot/**'),
+        ],
+        'web.assets_backend_lazy': [
+            'crm_ts/static/src/views/forecast_graph/**',
+            'crm_ts/static/src/views/forecast_pivot/**',
+        ],
+        'web.assets_tests': [
+            'crm_ts/static/tests/tours/**/*',
+        ],
+        'web.assets_unit_tests': [
+            'crm_ts/static/tests/mock_server/**/*',
+            'crm_ts/static/tests/crm_test_helpers.js'
+        ],
+        'web.qunit_suite_tests': [
+            'crm_ts/static/tests/**/*',
+            ('remove', 'crm_ts/static/tests/tours/**/*'),
+            ('remove', 'crm_ts/static/tests/mock_server/**/*'),
+            ('remove', 'crm_ts/static/tests/crm_test_helpers.js')
+        ],
+    },
+    'license': 'LGPL-3',
+}

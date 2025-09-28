@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_ts_student_wizard_form" model="ir.ui.view">
+        <field name="name">crm_ts.student.wizard.form</field>
+        <field name="model">crm_ts.student.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Học sinh">
+                <group>
+                    <field name="lead_id" invisible="1"/>
+                    <field name="lead_name" readonly="1"/>
+                </group>
+                
+                <group string="Thông tin học sinh">
+                    <field name="student_name"/>
+                    <field name="identifier_code"/>
+                    <field name="birth_date"/>
+                    <field name="lead_birth_year"/>
+                </group>
+                
+                <group string="Hành động">
+                    <field name="action_type" widget="radio"/>
+                    <field name="student_id" invisible="action_type != 'link_existing'" 
+                           string="Học sinh Liên kết" 
+                           options="{'no_create': True, 'no_open': True}"/>
+                </group>
+                
+                <footer>
+                    <button name="action_confirm" string="Confirm" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="crm_ts_student_wizard_action" model="ir.actions.act_window">
+        <field name="name">Học sinh</field>
+        <field name="res_model">crm_ts.student.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="crm_ts_student_wizard_form"/>
+    </record>
+</odoo>

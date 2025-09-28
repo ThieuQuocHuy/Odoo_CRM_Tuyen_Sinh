@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo><data noupdate="1">
+    <record id="crm_ts_sales_team.team_sales_department" model="crm_ts.team" forcecreate="False">
+        <field name="alias_name">info</field>
+    </record>
+
+    <record id="crm_ts_sales_team.salesteam_website_sales" model="crm_ts.team" forcecreate="False">
+        <field name="use_opportunities" eval="False"/>
+    </record>
+
+    <record id="crm_ts_sales_team.pos_sales_team" model="crm_ts.team" forcecreate="False">
+        <field name="use_opportunities" eval="False"/>
+    </record>
+
+</data></odoo>
